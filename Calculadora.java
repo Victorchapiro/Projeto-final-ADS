@@ -6,7 +6,17 @@ public class Calculadora{
     
         public double subtração(){return resultado;}
     
-        public double divisão(){return resultado;}
+        public double divisao(double dividendo, double divisor) {
+            if (divisor == 0) {
+                String sinal = "";
+                if (dividendo < 0) {
+                    sinal = "-";
+                }
+                throw new IllegalArgumentException(
+                        "Não é possível dividir por zero. Java retornaria '" + sinal + "Infinity'.");
+            }
+            return (dividendo) / divisor;            
+        }
     
         public double multiplicação(){return resultado;}
     
