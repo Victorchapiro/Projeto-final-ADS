@@ -34,12 +34,12 @@ public class Calculadora {
         return resultado;
     }
 
-    public double piso() {
-        return resultado;
+    public double piso(double numero) {
+        return Math.floor(numero);
     }
 
-    public double teto() {
-        return resultado;
+    public double teto(double numero) {
+        return Math.ceil(numero);
     }
 
     /**
