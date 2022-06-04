@@ -6,45 +6,50 @@ package utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import utils.Calculadora;
 
 public class EquacaoSegundoGrau {
     private double a, b, c;
-
-    //private final int DELTA_POSITIVO = +1;
-    //private final int DELTA_NEGATIVO = -1;
     private ArrayList<Double> raizes = new ArrayList<>();
-
-    private Calculadora calc;
-
-    private double getDelta(){
+    
+    private double getDelta() {
+        Calculadora calc = new Calculadora();
         double resultado = calc.exponencial(b, 2);
         resultado = resultado -4*calc.multiplicacao(a, c);
         return resultado;
     }
 
     private void bhaskara() {
+        raizes.clear();
+
         if (a==0.0) {
             throw new IllegalArgumentException("A equação informada não é de segundo grau! (a=0)");
         }
         double delta = getDelta();
-        if (delta<0.0) {
+        if (delta < 0.0) {
             throw new IllegalArgumentException("Não existem raízes válidas para a equação informada! (delta negativo)");
         }
-        double raizDeDelta =  calc.raizQuadrada(delta);
+        
+        Calculadora calc = new Calculadora();
         double menosB = calc.multiplicacao(-1, this.b);
         double denominador = calc.multiplicacao(2, this.a);
-        raizes.add(calc.divisao(calc.soma(menosB, raizDeDelta), denominador));
-        if (delta != 0.0 ) {
-            raizes.add(calc.divisao(calc.subtracao(menosB, raizDeDelta), denominador));
-            Collections.sort(raizes);
+
+        if (delta == 0.0) {
+            raizes.add(calc.divisao(menosB, denominador));
+            return;
         }
+
+        double raizDeDelta = calc.raizQuadrada(delta);
+        raizes.add(calc.divisao(calc.soma(menosB, raizDeDelta), denominador));
+        raizes.add(calc.divisao(calc.subtracao(menosB, raizDeDelta), denominador));
+            
+        Collections.sort(raizes);        
     }
 
     public EquacaoSegundoGrau(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
-        calc = new Calculadora();
     }
 
     public int getQtdeRaizes(){

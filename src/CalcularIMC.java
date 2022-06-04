@@ -3,17 +3,15 @@
 
 package src;
 
-import utils.Imc;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import utils.Imc;
 
 public class CalcularIMC {
 
     private static double peso = 0.0;
     private static int altura = 0;
-
-    private static Scanner in = new Scanner(System.in);
 
     private static void readParamsFromArgs(String[] args) {
         if (args.length != 2) {
@@ -23,7 +21,7 @@ public class CalcularIMC {
         altura = Integer.valueOf(args[1]);
     }
 
-    private static void readParamsFromConsole() {
+    private static void readParamsFromConsole(Scanner in) {
 
         boolean argumentoValido = false;
 
@@ -51,10 +49,12 @@ public class CalcularIMC {
     }
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
         try {
             readParamsFromArgs(args);
         } catch (Exception e) {
-            readParamsFromConsole();
+            readParamsFromConsole(in);
         }
 
         try {

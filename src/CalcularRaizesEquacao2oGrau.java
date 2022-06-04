@@ -1,19 +1,17 @@
-package src;
 /** @author Geraldo Giovani Pinho da Ponte (2124713) 
 */
 
-import utils.EquacaoSegundoGrau;
+package src;
 
 import java.util.ArrayList;
-//import java.util.Collection;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import utils.EquacaoSegundoGrau;
 
 public class CalcularRaizesEquacao2oGrau {
     private static ArrayList<Double> coeficientes = new ArrayList<>();
     private static final String[] LETRAS_DO_COEFICIENTE = {"a", "b", "c"};
-
-    private static Scanner in = new Scanner(System.in);
 
     private static double a(){
         return coeficientes.get(0);
@@ -27,8 +25,7 @@ public class CalcularRaizesEquacao2oGrau {
         return coeficientes.get(2);
     }
 
-
-    private static void readCoeficientesFromConsole(){
+    private static void readCoeficientesFromConsole(Scanner in){
         coeficientes.clear();
 
         boolean argumentoValido = false;
@@ -88,7 +85,7 @@ public class CalcularRaizesEquacao2oGrau {
         return sb.toString();
     }
 
-    private static boolean respondeuSim(String pergunta) {
+    private static boolean respondeuSim(Scanner in, String pergunta) {
         String resposta = "";
         boolean respostaValida = false;
         do {
@@ -106,20 +103,18 @@ public class CalcularRaizesEquacao2oGrau {
     }
 
     public static void main(String[] args) {
-
-        //EquacaoSegundoGrau eq;
-        //Collection<Double> raizes;
+        Scanner in = new Scanner(System.in);
 
         try {
             readCoeficientesFromArgs(args);
             System.out.println(getRelatorioDoResultado("", a(), b(), c()));
         } catch (Exception e) {
-            if ( respondeuSim("Deseja gerar uma amostra com os cenários possíveis? (S/N): ") ) {
+            if ( respondeuSim(in, "Deseja gerar uma amostra com os cenários possíveis? (S/N): ") ) {
                 System.out.println(gerarAmostra());
             }
 
-            while ( respondeuSim( "Deseja informar uma equação? (S/N): ") ) {
-                readCoeficientesFromConsole();
+            while ( respondeuSim(in, "Deseja informar uma equação? (S/N): ") ) {
+                readCoeficientesFromConsole(in);
                 System.out.println(getRelatorioDoResultado("", a(), b(), c()));
                 in.nextLine();
             }
