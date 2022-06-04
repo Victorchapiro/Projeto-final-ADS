@@ -24,6 +24,15 @@ public class Calculadora{
     
         public double teto(){return resultado;}
     
-        public double raizQuadrada(){return resultado;}
+        public double raizQuadrada(double radicando) {
+            if (radicando < 0) {
+                throw new IllegalArgumentException(
+                        "\n\n Parâmetro: " + radicando
+                                + "\n Não existe raiz quadrada de números negativos no conjunto de números "
+                                + "reais.\n "
+                                + "Java retornaria 'NaN'.\n");
+            }
+            return Math.sqrt(radicando);
+        }
     }
 
