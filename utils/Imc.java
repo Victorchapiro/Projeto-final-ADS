@@ -3,8 +3,6 @@
 
 package utils;
 
-import Calculadora;
-
 public class Imc {
     private final double[] faixas = {16.9, 18.4, 24.9, 29.9, 34.9, 40.0};
 

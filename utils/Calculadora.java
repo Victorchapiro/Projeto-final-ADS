@@ -1,18 +1,13 @@
+package utils;
+
 public class Calculadora {
-
-    //TODO excluir este atributo global 
-    //indicará que os métodos foram devidamente implementados
-    public double resultado;
-
+    
     public double soma(double numeroA, double numeroB) {
-        resultado = numeroA + numeroB;
-
-        return resultado;
+        return numeroA + numeroB;
     }
 
-    public double subtração(double numeroA, double numberoB) {
-        resultado = numeroA - numberoB;
-        return resultado;
+    public double subtracao(double numeroA, double numberoB) {        
+        return numeroA - numberoB;
     }
 
     /**
@@ -30,8 +25,8 @@ public class Calculadora {
         return (dividendo) / divisor;
     }
 
-    public double multiplicação() {
-        return resultado;
+    public double multiplicacao(double a, double b) {
+        return a * b;
     }
 
     public double piso(double numero) {
@@ -54,5 +49,9 @@ public class Calculadora {
                             + "Java retornaria 'NaN'.\n");
         }
         return Math.sqrt(radicando);
+    }
+
+    public double exponencial(double base, double expoente) {
+        return Math.pow(base, expoente);
     }
 }

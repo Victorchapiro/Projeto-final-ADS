@@ -1,10 +1,11 @@
+package src;
 /** @author Geraldo Giovani Pinho da Ponte (2124713) 
 */
 
 import utils.EquacaoSegundoGrau;
 
 import java.util.ArrayList;
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -106,8 +107,8 @@ public class CalcularRaizesEquacao2oGrau {
 
     public static void main(String[] args) {
 
-        EquacaoSegundoGrau eq = null;
-        Collection<Double> raizes = null;
+        //EquacaoSegundoGrau eq;
+        //Collection<Double> raizes;
 
         try {
             readCoeficientesFromArgs(args);

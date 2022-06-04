@@ -10,11 +10,11 @@ import java.util.Collections;
 public class EquacaoSegundoGrau {
     private double a, b, c;
 
-    private final int DELTA_POSITIVO = +1;
-    private final int DELTA_NEGATIVO = -1;
+    //private final int DELTA_POSITIVO = +1;
+    //private final int DELTA_NEGATIVO = -1;
     private ArrayList<Double> raizes = new ArrayList<>();
 
-    private Calculadora calc = new Calculadora();
+    private Calculadora calc;
 
     private double getDelta(){
         double resultado = calc.exponencial(b, 2);
@@ -44,6 +44,7 @@ public class EquacaoSegundoGrau {
         this.a = a;
         this.b = b;
         this.c = c;
+        calc = new Calculadora();
     }
 
     public int getQtdeRaizes(){

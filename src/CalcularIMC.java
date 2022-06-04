@@ -1,6 +1,8 @@
 /** @author Geraldo Giovani Pinho da Ponte (2124713) 
 */
 
+package src;
+
 import utils.Imc;
 
 import java.util.InputMismatchException;
