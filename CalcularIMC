@@ -6,7 +6,7 @@ import utils.Imc;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class TestaImc {
+public class CalcularIMC {
 
     private static double peso = 0.0;
     private static int altura = 0;
