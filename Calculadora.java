@@ -2,9 +2,14 @@ public class Calculadora{
 
         public double resultado;
     
-        public double soma(){return resultado;}
+        public double soma(double numeroA, double numeroB){
+            resultado = numeroA + numeroB;
+            
+            return resultado;}
     
-        public double subtração(){return resultado;}
+        public double subtração(double numeroA, double numberoB){
+            resultado = numeroA - numberoB;
+            return resultado;}
     
         public double divisão(){return resultado;}
     
