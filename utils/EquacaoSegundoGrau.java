@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class EquacaoSegundoGrau {
+
+    public final static String LEIAUTE_DA_EQUACAO = "ax" + "\u00B2" + " + bc + c";
     private double a, b, c;
     private ArrayList<Double> raizes = new ArrayList<>();
 
@@ -69,6 +71,32 @@ public class EquacaoSegundoGrau {
         sb.append(sinal + this.b + "x");
         sinal = (c < 0 ? " " : " + ");
         sb.append(sinal + this.c);
+        return sb.toString();
+    }
+
+    public String getRelatorioDoResultado(String descricao) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(descricao + "\n");
+        sb.append("equação: " + this.toString() + "\n");
+        try {
+            sb.append("raízes: " + this.getRaizes().toString() + "\n");
+        } catch (IllegalArgumentException e) {
+            sb.append("raízes: " + e.getMessage() + "\n");
+        }
+        sb.append("\n");
+        return sb.toString();
+    }
+    
+    public String getExemplos() {
+        StringBuffer sb = new StringBuffer();
+        var eq = new EquacaoSegundoGrau(1, -5, 6);
+        sb.append(eq.getRelatorioDoResultado("Exemplo 1: duas raízes válidas"));
+        eq = new EquacaoSegundoGrau(4, -4, 1);
+        sb.append(eq.getRelatorioDoResultado("Exemplo 2: uma raíz válida"));
+        eq = new EquacaoSegundoGrau(5, 1, 6);
+        sb.append(eq.getRelatorioDoResultado("Exemplo 3: não existem raízes válidas"));
+        eq = new EquacaoSegundoGrau(0, 2, 4);
+        sb.append(eq.getRelatorioDoResultado("Exemplo 4: não é equação do segundo grau (a = 0)"));
         return sb.toString();
     }
 }

@@ -1,6 +1,6 @@
-package utils;
+//package utils;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
@@ -8,8 +8,7 @@ public class Principal {
         System.out.println("Seja bem-vindo!");
         Menu menu = new Menu();
         menu.apresentarOpcoes();
-        System.out.println("Tenha um excelente dia!!!");
-        
+        System.out.println("Tenha um excelente dia!!!");    
 
 }
     
