@@ -85,7 +85,7 @@ public class EquacaoSegundoGrau {
         sb.append("\n");
         return sb.toString();
     }
-    
+
     public String getExemplos() {
         StringBuffer sb = new StringBuffer();
         var eq = new EquacaoSegundoGrau(1, -5, 6);

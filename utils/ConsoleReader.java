@@ -1,3 +1,4 @@
+
 /** @author Geraldo Giovani Pinho da Ponte (2124713) */
 
 import java.util.InputMismatchException;
@@ -46,7 +47,7 @@ public class ConsoleReader {
 
         return input;
     }
-    
+
     public boolean respondeuSim(String pergunta) {
         String resposta = "";
         boolean respostaValida = false;
@@ -67,6 +68,5 @@ public class ConsoleReader {
         } while (!respostaValida);
         return resposta.equalsIgnoreCase(sim);
     }
-
 
 }
