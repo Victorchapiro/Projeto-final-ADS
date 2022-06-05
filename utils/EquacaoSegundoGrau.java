@@ -6,7 +6,6 @@ package utils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import utils.Calculadora;
 
 public class EquacaoSegundoGrau {
     private double a, b, c;
