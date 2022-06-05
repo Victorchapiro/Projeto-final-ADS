@@ -67,41 +67,31 @@ public class Menu {
                 case 3: {
                     System.out.println("Você escolheu calcular as raízes de uma equação do 2o grau:");
                     ConsoleReader in = new ConsoleReader(teclasDigitadas);
-                    try {
-                        String leiaute = EquacaoSegundoGrau.LEIAUTE_DA_EQUACAO;                     
-                        double a = in.readDouble(
-                                "Informe o valor de 'a' para a equação " + leiaute + ": ");
-                        double b = in.readDouble(
-                                "Informe o valor de 'b' para a equação " + leiaute + ": ");
-                        double c = in.readDouble(
-                                "Informe o valor de 'c' para a equação " + leiaute + ": ");                                                               
-                        EquacaoSegundoGrau eq = new EquacaoSegundoGrau(a, b, c);
-                        System.out.println(eq.getRelatorioDoResultado(" "));                        
-                        if (in.respondeuSim("Deseja exibir uma amostra dos cenários possíveis? (S/N)")) {
-                            System.out.println(eq.getExemplos());
-                        }                            
-                    } catch (InputMismatchException exception) {
-                        System.out.println("Digite apenas números.Tente novamente");
-                        teclasDigitadas = new Scanner(System.in);
-                        numeroA = 1;
+
+                    String leiaute = EquacaoSegundoGrau.LEIAUTE_DA_EQUACAO;
+                    double a = in.readDouble(
+                            "Informe o valor de 'a' para a equação " + leiaute + ": ");
+                    double b = in.readDouble(
+                            "Informe o valor de 'b' para a equação " + leiaute + ": ");
+                    double c = in.readDouble(
+                            "Informe o valor de 'c' para a equação " + leiaute + ": ");
+                    EquacaoSegundoGrau eq = new EquacaoSegundoGrau(a, b, c);
+                    System.out.println(eq.getRelatorioDoResultado(" "));
+                    if (in.respondeuSim("Deseja exibir uma amostra dos cenários possíveis? (S/N)")) {
+                        System.out.println(eq.getExemplos());
                     }
+
                     break;
                 }                
                 case 4: {
                     System.out.println("Você escolheu calcular o IMC:");
                     ConsoleReader in = new ConsoleReader(teclasDigitadas);
-                    try {
-                        double peso = in.readDouble("Informe seu peso (em Kg): ");
-                        int altura = in.readInteger("Informe sua altura (valor inteiro em cm): ");                                                    
-                        Imc imc = new Imc(peso, altura);
-                        System.out.println(imc.getTabelaIMC());
-                        System.out.println(imc.toString());                          
-                    } catch (InputMismatchException exception) {
-                        System.out.println("Digite apenas números.Tente novamente");
-                        teclasDigitadas = new Scanner(System.in);
-                        numeroA = 1;
-                    }
-                    break;  
+                    double peso = in.readDouble("Informe seu peso (em Kg): ");
+                    int altura = in.readInteger("Informe sua altura (valor inteiro em cm): ");
+                    Imc imc = new Imc(peso, altura);
+                    System.out.println(imc.getTabelaIMC());
+                    System.out.println(imc.toString());
+                    break; 
                 }                
                 case 5: {
                     System.out.println("Você escolheu km percorrido:");

@@ -62,7 +62,6 @@ public class EquacaoSegundoGrau {
 
     @Override
     public String toString() {
-        System.setProperty("file.encoding", "UTF-8");
         String sinal = "+";
         StringBuffer sb = new StringBuffer();
         sb.append(this.a);
