@@ -12,4 +12,5 @@ public class RacaoCavalo{
         Calculadora calc = new Calculadora();
         return calc.teto((peso / 50));
     }
+
 }
