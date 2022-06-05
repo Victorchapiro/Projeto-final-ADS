@@ -6,7 +6,7 @@ package utils;
  * @return quantos quilos de ração deve ser colocado para o cavalo
  */
 
-public class racaoCavalo {
+public class racaoCavalo{
     
     public double calculaRacao (int peso){
         Calculadora calc = new Calculadora();
