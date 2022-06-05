@@ -9,7 +9,7 @@ public class IRPF {
     private double baseCalculo1 = 1903.98;
     private double baseCalculo2 = 2826.65;
     private double baseCalculo3 = 3751.05;  
-    private double baseCalculo4 = 4664.68;
+    private double baseCalculo4 = 4664.680;
     private double auxiliar1;
     private double imposto1 = baseCalculo2 * aliquota1;
     private double imposto2 = baseCalculo3 * aliquota2;
