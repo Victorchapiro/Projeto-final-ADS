@@ -1,10 +1,7 @@
-/** @author Geraldo Giovani Pinho da Ponte (2124713) 
-*/
-
-package utils;
+/** @author Geraldo Giovani Pinho da Ponte (2124713) */
 
 public class Imc {
-    private final double[] faixas = {16.9, 18.4, 24.9, 29.9, 34.9, 40.0};
+    private final double[] faixas = { 16.9, 18.4, 24.9, 29.9, 34.9, 40.0 };
 
     private final double IMC_NORMAL_MINIMO = 18.5;
     private final double IMC_NORMAL_MAXIMO = 24.9;
@@ -36,7 +33,8 @@ public class Imc {
             sb.append("    " + (i + 1) + "   " + (faixas[i - 1] + 0.01) + " a " + faixas[i] + "0  " + descricao[i]);
             sb.append("\n");
         }
-        sb.append("    " + descricao.length + "  acima de " + faixas[faixas.length - 1] + "0  " + descricao[descricao.length - 1]);
+        sb.append("    " + descricao.length + "  acima de " + faixas[faixas.length - 1] + "0  "
+                + descricao[descricao.length - 1]);
         sb.append("\n" + linhaDivisoria);
         sb.append("FONTE: https://www.tuasaude.com/imc/");
         sb.append("\n\n");
