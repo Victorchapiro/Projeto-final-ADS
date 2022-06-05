@@ -8,7 +8,7 @@ package utils;
 
 public class racaoCavalo{
     
-    public double calculaRacao (Double peso){
+    public double calculaRacao (double peso){
         Calculadora calc = new Calculadora();
         return calc.teto((peso / 50));
     }
