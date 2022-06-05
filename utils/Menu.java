@@ -137,7 +137,7 @@ public class Menu {
                     }                 
                 }break;    
 
-                case 5: {
+                case 7: {
                     System.out.println("Você escolheu IMC:");
                     try {
                         System.out.println("Digite o seu peso");
@@ -156,7 +156,7 @@ public class Menu {
                     }                 
                 }break;
     
-                case 6: {
+                case 8: {
                     System.out.println("Você escolheu IMC:");
                     try {
                         System.out.println("Digite o seu peso");
